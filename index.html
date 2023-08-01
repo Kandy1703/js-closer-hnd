@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(245, 245, 245, 0.788);
+            font-size: 15px;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>CLOSER</h1>
+    <b>Q1.</b>
+    <pre>
+        function counter(){
+            var counter = 0;
+        
+            function IncreaseCounter() {
+                return counter += 1;
+            };
+        
+            return IncreaseCounter;
+        }
+        
+        var counter = counter();
+        alert(counter());
+        alert(counter());
+        alert(counter());
+        alert(counter());
+
+        output: 1 2 3 4 
+    </pre>
+    <b>Q2.</b>
+    <pre>
+        let count = 0;
+        (function () {
+        if (count === 0) {
+        let count = 1;
+         console.log(count); // What is logged?
+            }
+         console.log(count); // What is logged?
+        })
+        ();
+        <b>Output: 1 
+                   0 </b>
+    </pre>
+   <b>Q3.</b>
+    <pre>
+        for (var i = 0; i < 3; i++) {
+            setTimeout(function log() {
+              console.log(i); // What is logged?
+            }, 1000);
+          }
+
+          output: 3 3 3 
+    </pre>
+    <p><b>Q.4</b>Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.</p>
+    <pre>
+        function calculatearea(height,width){
+            function totalarea(width){
+                return height * width
+            }
+            return totalarea;
+        }
+
+        const rectangleAreal = calculatearea
+        const area = rectangleAreal(10)
+        console.log(15)
+
+    </pre>
+    <p><b>Q.5</b>Take a variable in outer function and create an inner function to increase the counter every time it is called</p>
+    <pre>
+        function counter(){
+            var counter = 0;
+        
+            function IncreaseCounter() {
+                return counter += 1;
+            };
+        
+            return IncreaseCounter;
+        }
+        
+        var counter = counter();
+        alert(counter());
+        alert(counter());
+        alert(counter());
+        alert(counter());
+    </pre>
+     <p><b>Q.6</b>
+        var a = 12;
+        (function () {
+          alert(a);
+        })();
+
+        output: 12
+    </p>
+    <p><b>Q.7</b></p>
+    <pre>
+        var a = 10;
+
+        var x = (function () {
+        var a = 12;
+        return function () {
+        alert(a);
+     };
+  
+})
+
+();
+x();
+output; 12
+    </pre>
+    <p><b>Q.8</b>
+    <pre>var globalVar = "xyz";
+
+        (function outerFunc(outerArg) {
+            var outerVar = 'a';
+            
+            (function innerFunc(innerArg) {
+            var innerVar = 'b';
+            
+            console.log(
+                "outerArg = " + outerArg + "\n" +
+                "innerArg = " + innerArg + "\n" +
+                "outerVar = " + outerVar + "\n" +
+                "innerVar = " + innerVar + "\n" +
+                "globalVar = " + globalVar);
+            
+            })(456);
+        })(123);</pre>
+        <p> <b>output: </b>
+           <p> outerArg = 123</p>
+           <p>  innerArg = 456</p>
+           <p> outerVar = a</p>
+           <p> innerVar = b</p>
+           <p> globalVar = xyz</p>
+            </p>
+    </p>
+    <script src="script.js"></script>
+</body>
+</html>
